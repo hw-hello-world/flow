@@ -1,11 +1,19 @@
+// @flow
+
 import _ from 'lodash';
 
-function component() {
-  var element = document.createElement('div');
+function add(a, b): number {
+  return a + b;
+}
 
-  element.innerHTML = _.join(['Hello', 'Flow'], ' ');
+function component() {
+  const element = document.createElement('div');
+
+  element.innerHTML = _.join(['Hello', 'Flow', add(2, 3)], ' ');
 
   return element;
 }
 
-document.body.appendChild(component());
+if (document.body) {
+  document.body.appendChild(component());
+}
